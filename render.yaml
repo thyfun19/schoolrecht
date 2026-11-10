@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: schoolrecht-api
+    runtime: python
+    rootDir: gpo-assistent/backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn gpo_app.api:app --host 0.0.0.0 --port $PORT
+    plan: free
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: PINECONE_API_KEY
+        sync: false
+      - key: PINECONE_INDEX_NAME
+        value: gpo-uitspraken
+      - key: GPO_REGISTRY_DATABASE_URL
+        sync: false

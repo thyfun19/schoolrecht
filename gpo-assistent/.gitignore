@@ -1,0 +1,43 @@
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# Python environments and generated output
+.venv/
+venv/
+.deps/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Original sources, extracted document contents and local databases
+*.pdf
+*.sqlite
+*.sqlite3
+*.db
+data/
+models/
+cache/
+local-results/
+*.log
+
+# Frontend dependencies and builds
+node_modules/
+.vite/
+coverage/
+
+# Local editor and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

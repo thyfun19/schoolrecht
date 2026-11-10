@@ -1,0 +1,2 @@
+# Keep the frozen experiment's raw SHA-256 stable on Windows checkouts.
+backend/experiments/candidate-union-questions.json text eol=lf

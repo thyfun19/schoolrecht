@@ -1,0 +1,98 @@
+{
+  "attribution": "Stichting Onderwijsgeschillen, https://www.onderwijsgeschillen.nl/",
+  "scope": "Doelgerichte selectie van tien openbare adviezen; geen volledige of representatieve dataset.",
+  "documents": [
+    {
+      "case_number": "112994",
+      "advice_date": "2025-07-07",
+      "topic": "verwijdering",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2025/08/112994-anoniem-advies.pdf",
+      "sha256": "6e0c63c6db948b64972a2e4b72cf55956a4212d07ea0cde697e0014efe9cac55",
+      "pages": 8,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "110651",
+      "advice_date": "2025-06-16",
+      "topic": "verwijdering",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2025/07/110651-anoniem-advies.pdf",
+      "sha256": "7b9067d3a5ad2570e0d3041cf4d783e8c3a0c0ea990992adc73e297e5fcb8f8e",
+      "pages": 7,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "122465",
+      "advice_date": "2025-10-06",
+      "topic": "verwijdering",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2025/11/122465-anoniem-advies.pdf",
+      "sha256": "1db1e06b5a00f695284fd79954a23cb80d606cded9c5599545147704baaa173d",
+      "pages": 6,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "110222",
+      "advice_date": "2025-06-23",
+      "topic": "toelating",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2025/07/110222-anoniem-advies-1.pdf",
+      "sha256": "c40bb9b903be437355da061a70328d4206fbc5124e8216aeaf3abe7c3e6d6173",
+      "pages": 7,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "108771",
+      "advice_date": "2019-07-08",
+      "topic": "toelating",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2019/07/108771%20advies%20anoniem.pdf",
+      "sha256": "637129b5c5835f4687dad4a3e720ab0b080b4b20d4a92a98ab29c68c1d9f4888",
+      "pages": 4,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "46731",
+      "advice_date": "2023-08-01",
+      "topic": "toelating",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2023/08/46731-anoniem-advies.pdf",
+      "sha256": "cee9c6ffdf6248b4b13b28f538d50f287bf140e655b623b1be1c28a02bf4dc93",
+      "pages": 6,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "123719",
+      "advice_date": "2025-10-21",
+      "topic": "ontwikkelingsperspectief",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2025/12/123719-anoniem-advies.pdf",
+      "sha256": "8fd9bd7a3a4885cc36fcad8093ff50b6e9fa7e592cc2b896747369d9f86414b0",
+      "pages": 5,
+      "retrieved": "2026-10-29",
+      "alternative_advice_date": "2025-10-22",
+      "date_note": "Koppen noemen 21 oktober; vaststellingszin noemt 22 oktober 2025. Niet opgelost."
+    },
+    {
+      "case_number": "126525",
+      "advice_date": "2025-11-19",
+      "topic": "ontwikkelingsperspectief",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2025/12/126525-anoniem-advies.pdf",
+      "sha256": "e94c95420ef293f241c7412466eaa4cda144a197d975dd399f5f505840f27493",
+      "pages": 5,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "109206",
+      "advice_date": "2020-06-15",
+      "topic": "ontwikkelingsperspectief",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2020/06/109206%20anoniem%20advies.pdf",
+      "sha256": "7674b88b8a438ba200069b328d219950762ccf6f79fb05683ef4f2cf1bd8812f",
+      "pages": 5,
+      "retrieved": "2026-10-29"
+    },
+    {
+      "case_number": "109493",
+      "advice_date": "2020-12-14",
+      "topic": "ontwikkelingsperspectief",
+      "source_url": "https://wordpress.onderwijsgeschillen.nl/app/uploads/2020/12/109493%20advies%20anoniem.pdf",
+      "sha256": "23560c8298de6e03632e62733351c03f6025668ad24fc39f9708c8fd66bd8fee",
+      "pages": 4,
+      "retrieved": "2026-10-29"
+    }
+  ]
+}

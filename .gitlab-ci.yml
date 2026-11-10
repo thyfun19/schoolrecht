@@ -1,0 +1,86 @@
+# CI/CD Pipeline voor Schoolrecht / GPO Assistent Chatbot
+# Auteur: Timi Fung (HBO-ICT Public Lab)
+# Stages: Build -> Test -> Staging -> Deploy
+
+stages:
+  - build
+  - test
+  - staging
+  - deploy
+
+default:
+  tags:
+    - hva
+
+cache:
+  key: ${CI_COMMIT_REF_SLUG}
+  paths:
+    - gpo-assistent/frontend/node_modules/
+
+# =======================================================
+# STAGE 1: BUILD (Vite & React / NL Design System App)
+# =======================================================
+build_frontend:
+  stage: build
+  image: node:20-alpine
+  script:
+    - cd gpo-assistent/frontend
+    - npm ci || npm install
+    - npm run build
+  artifacts:
+    name: "schoolrecht-frontend-${CI_COMMIT_SHORT_SHA}"
+    paths:
+      - gpo-assistent/frontend/dist/
+    expire_in: 1 week
+
+# =======================================================
+# STAGE 2: TEST (TypeScript type checks & Python validation)
+# =======================================================
+test_frontend_types:
+  stage: test
+  image: node:20-alpine
+  script:
+    - cd gpo-assistent/frontend
+    - npm ci || npm install
+    - npx tsc --noEmit
+
+test_backend_compilation:
+  stage: test
+  image: python:3.11-slim
+  script:
+    - cd gpo-assistent/backend
+    - python -m py_compile gpo_app/api.py gpo_app/schemas.py gpo_local/question_intake.py
+    - echo "Backend Python modules syntax and structure verified."
+
+# =======================================================
+# STAGE 3: STAGING (Automated Verification Environment)
+# =======================================================
+staging_verification:
+  stage: staging
+  image: node:20-alpine
+  dependencies:
+    - build_frontend
+  script:
+    - echo "Deploying Schoolrecht artifact to Staging verification environment..."
+    - test -f gpo-assistent/frontend/dist/index.html || exit 1
+    - echo "Staging verification completed successfully."
+  environment:
+    name: staging
+    url: https://studio.pages.fdmci.hva.nl/studio/public-lab/projects/2026-2027-semester-1/individual/public-lab-timi-fung-kraak-de-code/
+
+# =======================================================
+# STAGE 4: DEPLOY (Productie Hosting via GitLab Pages)
+# =======================================================
+pages:
+  stage: deploy
+  image: alpine:latest
+  dependencies:
+    - build_frontend
+  script:
+    - mkdir -p public
+    - cp -r gpo-assistent/frontend/dist/* public/
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "master" || $CI_COMMIT_BRANCH == "main"

@@ -1,0 +1,783 @@
+/*
+ * SchoolRecht — Eigen visuele identiteit gebouwd op NL Design System & Utrecht tokens
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap');
+
+:root {
+  /* SchoolRecht Kleurenpalet (afgestemd op het navy-indigo SchoolRecht logo) */
+  --vr-primary-purple: #231f6b;
+  --vr-primary-dark: #18154e;
+  --vr-accent-purple: #3b33a6;
+  --vr-accent-soft: #eef0ff;
+  --vr-text-main: #1e293b;
+  --vr-text-muted: #526077;
+  --vr-border-card: #dce2ee;
+  --vr-bg-page: #f4f6fb;
+  --vr-surface-white: #ffffff;
+  --vr-focus-ring: #d97706;
+
+  /* Font families */
+  --font-headings: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--vr-bg-page);
+  color: var(--vr-text-main);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--vr-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+.vr-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* -------------------------------------------------------------
+   SchoolRecht Top Navigatiebalk
+   ------------------------------------------------------------- */
+.vr-navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--vr-border-card);
+  padding: 0.9rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  box-shadow: 0 1px 4px rgba(24, 21, 78, 0.04);
+}
+
+.vr-navbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.vr-navbar__brand,
+a.vr-navbar__brand,
+a.vr-navbar__brand:hover,
+a.vr-navbar__brand:focus,
+a.vr-navbar__brand:active,
+a.vr-navbar__brand:visited {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-headings);
+  color: var(--vr-primary-purple);
+  text-decoration: none !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.vr-navbar__emblem {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.vr-navbar__brand-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.vr-navbar__brand-text,
+a.vr-navbar__brand .vr-navbar__brand-text {
+  font-family: var(--font-headings);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--vr-primary-purple);
+  letter-spacing: -0.4px;
+  line-height: 1.1;
+  text-decoration: none !important;
+}
+
+.vr-navbar__brand-sub {
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--vr-text-muted);
+  letter-spacing: 0.2px;
+}
+
+.vr-navbar__stats {
+  display: flex;
+  align-items: center;
+}
+
+/* NLDS DataBadge verfijning */
+.utrecht-data-badge {
+  background-color: var(--vr-accent-soft) !important;
+  color: var(--vr-primary-purple) !important;
+  font-family: var(--font-headings) !important;
+  font-size: 0.78rem !important;
+  font-weight: 700 !important;
+  padding: 0.25rem 0.65rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(59, 51, 166, 0.16) !important;
+}
+
+/* -------------------------------------------------------------
+   SchoolRecht Hero met Zwevend Zoekpaneel
+   ------------------------------------------------------------- */
+.vr-hero {
+  background: linear-gradient(135deg, var(--vr-primary-dark) 0%, var(--vr-primary-purple) 55%, #312a8e 100%);
+  color: #ffffff;
+  padding: 3.25rem 0 3.5rem 0;
+  border-bottom: 4px solid #4338ca;
+}
+
+.vr-hero__inner {
+  max-width: 880px;
+  margin: 0 auto;
+}
+
+.vr-hero__kicker {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.14);
+  color: #e0e7ff;
+  font-family: var(--font-headings);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  margin-bottom: 1rem;
+}
+
+.vr-hero__title {
+  font-family: var(--font-headings);
+  font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.4px;
+}
+
+.vr-hero__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.08rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: #e2e8f0;
+  margin: 0 0 1.75rem 0;
+  max-width: 720px;
+}
+
+.sr-search-panel {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 14px 34px rgba(12, 10, 46, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.vr-hero__search-form {
+  display: flex;
+  gap: 0.75rem;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+
+.vr-hero__search-input {
+  flex: 1 1 320px;
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--vr-text-main);
+  background-color: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  padding: 12px 16px;
+  height: 52px;
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.vr-hero__search-input:focus {
+  background-color: #ffffff;
+  border-color: var(--vr-accent-purple);
+}
+
+.vr-hero__search-input::placeholder {
+  color: #64748b;
+}
+
+.vr-hero__btn-compare,
+button.vr-hero__btn-compare,
+.utrecht-button.vr-hero__btn-compare {
+  background-color: var(--vr-primary-purple) !important;
+  color: #ffffff !important;
+  border: 1px solid var(--vr-primary-purple) !important;
+  border-radius: 8px !important;
+  padding: 12px 26px !important;
+  font-family: var(--font-headings) !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 24px !important;
+  cursor: pointer !important;
+  transition: all 0.15s ease !important;
+  white-space: nowrap !important;
+  height: 52px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+}
+
+.vr-hero__btn-compare:hover:not(:disabled),
+button.vr-hero__btn-compare:hover:not(:disabled),
+.utrecht-button.vr-hero__btn-compare:hover:not(:disabled) {
+  background-color: var(--vr-accent-purple) !important;
+  border-color: var(--vr-accent-purple) !important;
+  color: #ffffff !important;
+}
+
+.vr-hero__btn-compare:disabled,
+button.vr-hero__btn-compare:disabled,
+.utrecht-button.vr-hero__btn-compare:disabled {
+  opacity: 0.55 !important;
+  cursor: not-allowed !important;
+}
+
+.sr-search-panel__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.5rem;
+  margin-top: 0.85rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #eef2f6;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--vr-text-muted);
+}
+
+/* -------------------------------------------------------------
+   Voorbeeldvragen van Ouders (2x2 Grid met Onderwerp-Badges)
+   ------------------------------------------------------------- */
+.vr-examples-container {
+  padding: 2.5rem 0 2rem 0;
+}
+
+.vr-examples-header {
+  margin-bottom: 1.5rem;
+}
+
+.vr-examples-title {
+  font-family: var(--font-headings);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--vr-text-main);
+  margin: 0 0 0.35rem 0;
+}
+
+.vr-examples-subtitle {
+  font-size: 0.95rem;
+  color: var(--vr-text-muted);
+  margin: 0;
+}
+
+.vr-examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.vr-example-card {
+  background-color: var(--vr-surface-white);
+  border: 1px solid var(--vr-border-card);
+  border-left: 4px solid var(--vr-primary-purple);
+  border-radius: 10px;
+  padding: 1.35rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04);
+}
+
+.vr-example-card:hover {
+  border-color: var(--vr-accent-purple);
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(35, 31, 107, 0.1);
+}
+
+.vr-example-card__badge {
+  margin-bottom: 0.65rem;
+}
+
+.vr-example-card__heading {
+  font-family: var(--font-headings);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--vr-text-main);
+  margin: 0 0 0.45rem 0;
+}
+
+.vr-example-card__text {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--vr-text-muted);
+  margin: 0 0 0.9rem 0;
+}
+
+.vr-example-card__cta {
+  margin-top: auto;
+  font-family: var(--font-headings);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--vr-accent-purple);
+}
+
+/* -------------------------------------------------------------
+   Resultatengedeelte
+   ------------------------------------------------------------- */
+.vr-results-wrapper {
+  padding: 2rem 0 3.5rem 0;
+}
+
+.sr-loading-card {
+  background-color: #ffffff;
+  border: 1px solid var(--vr-border-card);
+  border-radius: 10px;
+  padding: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sr-error-card {
+  background-color: #fef2f2;
+  border: 1px solid #f87171;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  color: #991b1b;
+  margin-bottom: 1.5rem;
+}
+
+.sr-results-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--vr-border-card);
+}
+
+.vr-results-counter {
+  font-family: var(--font-headings);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.3;
+  color: var(--vr-text-main);
+}
+
+.sr-results-query {
+  font-size: 0.92rem;
+  color: var(--vr-text-muted);
+  margin: 0.25rem 0 0 0;
+}
+
+.vr-cases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  margin-bottom: 2rem;
+}
+
+/* Resultaatkaart */
+.vr-case-card {
+  background-color: var(--vr-surface-white);
+  border: 1px solid var(--vr-border-card);
+  border-radius: 12px;
+  padding: 1.5rem 1.65rem;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.15s ease;
+}
+
+.vr-case-card:hover {
+  border-color: #b9c3dc;
+}
+
+.vr-case-card__top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.vr-case-card__badges {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.vr-case-card__rank {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--vr-primary-purple);
+  color: #ffffff;
+  font-family: var(--font-headings);
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.18rem 0.55rem;
+  border-radius: 6px;
+}
+
+.vr-case-card__date {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--vr-text-muted);
+}
+
+.vr-case-card__title {
+  font-family: var(--font-headings);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--vr-text-main);
+  margin: 0 0 0.9rem 0;
+}
+
+/* Highlighting in trefwoorden */
+.vr-text-highlight {
+  background-color: #eef0ff;
+  color: var(--vr-primary-purple);
+  font-weight: 700;
+  padding: 0 0.2rem;
+  border-radius: 3px;
+}
+
+.vr-case-card__summary {
+  background-color: #f8faff;
+  border-left: 4px solid var(--vr-accent-purple);
+  border-radius: 0 8px 8px 0;
+  padding: 0.95rem 1.15rem;
+  margin: 0 0 1.15rem 0;
+}
+
+.vr-case-card__quote-label {
+  font-family: var(--font-headings);
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--vr-accent-purple);
+  margin-bottom: 0.35rem;
+}
+
+.vr-case-card__quote-text {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--vr-text-main);
+  margin: 0;
+}
+
+/* In-place uitgeklapte sectie */
+.vr-case-card__full-content {
+  background-color: #f8fafc;
+  border: 1px solid var(--vr-border-card);
+  padding: 1.1rem 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 1.15rem;
+}
+
+.vr-case-card__full-content h4 {
+  font-family: var(--font-headings);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--vr-primary-purple);
+  margin: 0 0 0.45rem 0;
+}
+
+.vr-case-card__full-content p {
+  font-size: 0.94rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Actielinks onderaan de kaart */
+.vr-case-card__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  border-top: 1px solid #edf1f7;
+  padding-top: 0.95rem;
+}
+
+.vr-case-card__actions-left {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.vr-link-button,
+button.vr-link-button,
+.vr-case-card__actions .utrecht-button,
+.vr-case-card__actions button,
+.vr-case-card .utrecht-button,
+.vr-results-wrapper button.utrecht-button--subtle {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-width: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-family: var(--font-headings) !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: var(--vr-primary-purple) !important;
+  cursor: pointer !important;
+  text-decoration: none !important;
+  line-height: inherit !important;
+  min-height: unset !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+.vr-link-button:hover,
+button.vr-link-button:hover,
+.vr-case-card__actions .utrecht-button:hover,
+.vr-case-card__actions button:hover,
+.vr-case-card .utrecht-button:hover,
+.vr-results-wrapper button.utrecht-button--subtle:hover {
+  color: var(--vr-accent-purple) !important;
+  background-color: transparent !important;
+  text-decoration: underline !important;
+}
+
+.vr-link-button--source {
+  color: var(--vr-accent-purple) !important;
+  text-decoration: underline !important;
+}
+
+.vr-external-link {
+  font-family: var(--font-headings);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--vr-primary-purple);
+  text-decoration: none;
+}
+
+.vr-external-link:hover {
+  color: var(--vr-accent-purple);
+  text-decoration: underline;
+}
+
+/* "Toon nog X uitspraken" Button */
+.vr-btn-load-more,
+button.vr-btn-load-more,
+.utrecht-button.vr-btn-load-more {
+  width: 100%;
+  background-color: #ffffff !important;
+  color: var(--vr-primary-purple) !important;
+  border: 1.5px solid var(--vr-primary-purple) !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  font-family: var(--font-headings) !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  line-height: 24px !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  transition: all 0.15s ease !important;
+}
+
+.vr-btn-load-more:hover,
+button.vr-btn-load-more:hover,
+.utrecht-button.vr-btn-load-more:hover {
+  background-color: var(--vr-accent-soft) !important;
+}
+
+/* Lege toestand (Geen resultaat) */
+.vr-no-results {
+  background: var(--vr-surface-white);
+  border: 1px solid var(--vr-border-card);
+  border-radius: 10px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.vr-no-results__text {
+  font-family: var(--font-headings);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--vr-text-main);
+  margin: 0;
+}
+
+.vr-footer-bottom {
+  background-color: #ffffff;
+  border-top: 1px solid var(--vr-border-card);
+  padding: 1.25rem 0;
+  font-size: 14px;
+  color: var(--vr-text-muted);
+}
+
+/* -------------------------------------------------------------
+   Bronpaneel (Data bij de bron - Drawer)
+   ------------------------------------------------------------- */
+.vr-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  z-index: 1000;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.vr-drawer {
+  width: min(580px, 100vw);
+  height: 100vh;
+  background-color: #ffffff;
+  border-left: 4px solid var(--vr-primary-purple);
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.16);
+  overflow-y: auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vr-drawer__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--vr-border-card);
+  padding-bottom: 1rem;
+}
+
+.vr-drawer__title {
+  font-family: var(--font-headings);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--vr-primary-purple);
+  margin: 0;
+}
+
+.vr-drawer__quote {
+  background-color: #f8faff;
+  border-left: 4px solid var(--vr-primary-purple);
+  padding: 1rem 1.25rem;
+  border-radius: 6px;
+}
+
+.vr-drawer__quote blockquote {
+  margin: 0;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.vr-drawer__context {
+  background-color: #fafbfc;
+  border: 1px solid var(--vr-border-card);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.vr-drawer__context-title {
+  font-family: var(--font-headings);
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: var(--vr-text-main);
+}
+
+.vr-drawer__meta {
+  border-top: 1px solid var(--vr-border-card);
+  padding-top: 1rem;
+  font-size: 14px;
+  color: var(--vr-text-muted);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* -------------------------------------------------------------
+   Disclaimer & Juridische Verantwoording
+   ------------------------------------------------------------- */
+.vr-disclaimer-section {
+  background-color: #eef1f8;
+  border-top: 1px solid var(--vr-border-card);
+  padding: 2.5rem 0;
+  margin-top: 3.5rem;
+}
+
+.vr-disclaimer-box {
+  max-width: 900px;
+}
+
+.vr-disclaimer-box__title {
+  font-family: var(--font-headings);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--vr-text-main);
+  margin: 0 0 0.65rem 0;
+}
+
+.vr-disclaimer-box__text {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--vr-text-muted);
+  margin: 0 0 0.75rem 0;
+}
+
+.vr-disclaimer-box__text:last-child {
+  margin-bottom: 0;
+}
+
+.vr-disclaimer-box__text a {
+  color: var(--vr-accent-purple);
+  text-decoration: underline;
+}

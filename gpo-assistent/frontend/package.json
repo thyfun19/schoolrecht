@@ -1,0 +1,35 @@
+{
+  "name": "gpo-assistent-frontend",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "dependencies": {
+    "@nl-design-system-candidate/button-css": "^2.0.0",
+    "@nl-design-system-candidate/button-react": "^1.1.0",
+    "@nl-design-system-candidate/code-css": "^4.0.0",
+    "@nl-design-system-candidate/code-react": "^2.0.1",
+    "@nl-design-system-candidate/data-badge-react": "^1.1.8",
+    "@nl-design-system-candidate/heading-react": "^1.1.8",
+    "@nl-design-system-candidate/link-react": "^1.1.9",
+    "@nl-design-system-candidate/paragraph-css": "^3.0.0",
+    "@nl-design-system-candidate/paragraph-react": "^2.2.3",
+    "@nl-design-system-candidate/skip-link-react": "^1.1.8",
+    "@utrecht/component-library-css": "^7.0.1",
+    "@utrecht/component-library-react": "^15.0.1",
+    "@utrecht/design-tokens": "^5.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  }
+}

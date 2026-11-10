@@ -1,0 +1,33 @@
+services:
+  # ==========================================
+  # 1. Schoolrecht Python FastAPI Backend
+  # ==========================================
+  backend:
+    build:
+      context: ./gpo-assistent/backend
+      dockerfile: Dockerfile
+    container_name: schoolrecht-backend
+    restart: unless-stopped
+    ports:
+      - "8002:8000"
+    environment:
+      - PINECONE_API_KEY=${PINECONE_API_KEY}
+      - PINECONE_INDEX_NAME=${PINECONE_INDEX_NAME:-gpo-uitspraken}
+      - GPO_REGISTRY_DATABASE_URL=${GPO_REGISTRY_DATABASE_URL}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    env_file:
+      - ./gpo-assistent/backend/.env
+
+  # ==========================================
+  # 2. Schoolrecht React / NL Design Frontend
+  # ==========================================
+  frontend:
+    build:
+      context: ./gpo-assistent/frontend
+      dockerfile: Dockerfile
+    container_name: schoolrecht-frontend
+    restart: unless-stopped
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend

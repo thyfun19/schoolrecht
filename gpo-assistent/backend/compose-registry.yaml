@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:17-bookworm@sha256:839fbb5a4942a7758dd93e18b42ea5649807491a0545b5eeeb8f0b8bb11857a5
+    ports:
+      - "127.0.0.1:55432:5432"
+    environment:
+      POSTGRES_DB: gpo_registry
+      POSTGRES_USER: gpo_dev
+      POSTGRES_PASSWORD_FILE: /run/secrets/gpo_password
+    secrets:
+      - gpo_password
+    volumes:
+      - registry_pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U gpo_dev -d gpo_registry"]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+secrets:
+  gpo_password:
+    file: ./data/registry/postgres-password.txt
+volumes:
+  registry_pgdata:
